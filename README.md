@@ -19,7 +19,7 @@ Meshtastic Email Relay is a Python script that enables you to send and receive e
 
 1. **Clone the Repository**: Clone this repository to your local machine:
    ```sh
-   git clone https://github.com/yourusername/meshtastic-email-relay.git
+   git clone https://github.com/hejagithub/meshtastic-email-relay.git
    ```
 
 2. **Install Required Packages**: Navigate to the project directory and install the required Python packages using `pip`:
@@ -94,7 +94,6 @@ Contributions are welcome! Please fork this repository, make your changes, and s
 
 **Replace the following placeholders with your actual information:**
 
-- `https://github.com/yourusername/meshtastic-email-relay.git`: Replace `yourusername` with your GitHub username.
 - `your-email@gmail.com`: Replace with your Gmail email address.
 - `your-app-password`: Replace with your App Password.
 
