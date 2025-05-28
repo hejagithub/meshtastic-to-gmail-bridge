@@ -13,7 +13,7 @@ import threading
 imaplib._MAXLINE = 10000
 
 class EmailRelay:
-    def __init__(self, gmail_email, gmail_password, allowed_senders=None):
+    def __init__(self, gmail_email, gmail_password, com, allowed_senders=None):
         """
         Initialize the email relay with Gmail credentials, allowed senders, and Meshtastic interface.
         """
@@ -21,8 +21,8 @@ class EmailRelay:
         self.gmail_password = gmail_password
         self.allowed_senders = allowed_senders or []
         
-        # Use SerialInterface with COM4
-        self.interface = SerialInterface('COM4')
+        # Use SerialInterface with the device
+        self.interface = SerialInterface(com)
         
         # Help message with available commands
         self.help_message = (
@@ -246,8 +246,9 @@ def main():
     GMAIL_EMAIL = 'your-email@gmail.com'
     GMAIL_APP_PASSWORD = 'your-app-password'  # Use App Password, not account password
     ALLOWED_SENDERS = []  # Optional: List of node IDs to whitelist
+    COM_PORT = 'COM4'
     
-    email_relay = EmailRelay(GMAIL_EMAIL, GMAIL_APP_PASSWORD, ALLOWED_SENDERS)
+    email_relay = EmailRelay(GMAIL_EMAIL, GMAIL_APP_PASSWORD, COM_PORT, ALLOWED_SENDERS)
 
     # Start the relay
     email_relay.run()
